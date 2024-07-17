@@ -32,26 +32,37 @@ This section will introduce the main structures within the system.
 
 #### 1）安装板
 介绍：安装在Z轴滑板上的安装板，将注射器针筒和2D轮廓传感器安装在它上面。
+![alt text](image.png)
+
 制造：3D打印（FDM），工程塑料。
 模型：[click to get stl file](<3Dmodels/STL/安装板 - PlanB.STL>)
 #### 2）底座组件
 介绍：由基板、调节装置和底座构成。
+![alt text](image-2.png)
+![alt text](image-5.png)
+
 制造：底座材料为不锈钢，通过激光切割和折弯制造。其余部件可直接采购。
 模型：[click to get stl file](<3Dmodels/STL/安装板 - PlanB.STL>)
 
+![alt text](96eef40f671b49c1fc0b6fbc2e41abf.jpg)
 图4 运动平台（改造后）
 
 ### (2) Extrusion System
 挤出系统由气压分配器和挤出装置构成。气泵可根据实验室条件选购。
 #### 1）气压分配器
+![alt text](cfa0d4b07e01fc85164b0fa47500455.jpg)
 图5 气压分配器
+
 介绍：找一下说明书。
 操作：
     a. 调压：通过调节黑色旋钮调节气压
     b. 开关：可以按下左侧红色小按钮进行手动调节，也可以外接踏板手动调节（这个接口被改造用于程序控制）；控制方式在手册中有详细说明。
 手册：链接
+
 ### (3) 2D laser profile sensor
+![alt text](image-3.png)
 图6 激光轮廓传感器
+
 使用的是基恩士2D激光轮廓传感器，驱动器型号为LJ-G5000，传感器型号为LJ-G030.
 测量原理：
 Z向测量范围：侧头下方XXXX；X向测量范围：
@@ -63,18 +74,25 @@ Z向测量精度：；X向测量精度。
 ## 3 Hardware
 这一节主要介绍接线和相关电路。
 ### (1) Control borard
+![alt text](image-6.png)
+![alt text](image-7.png)
 图7 控制板接口图
+
 使用的控制板品牌为：，型号为：。
 控制板相关信息的网页：。
 芯片为：。
 支持的固件包括：。
 
 ### (2) Sensor Driver
+![alt text](af2d056b9da10000c500996b1526ec5.jpg)
 图8 激光轮廓传感器驱动器
+
 激光轮廓传感器需要接电源，电压为，接线方式为。
 
 ### (3) Power
+![alt text](image-8.png)
 图9 直流电源
+
 24V XXW直流电源
 
 ### (4) Step Motors
