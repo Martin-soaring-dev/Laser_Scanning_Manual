@@ -14,7 +14,7 @@ A set of programme are built to enable scanning function in matlab.
 
 When scanning, it is necessary to coordinate the motion and the sensor. The PC controls the motion platform to move a step through the serial port, and then communicates with the sensor through Ethernet to obtain the cross section. This cycle continues until the scan is completed. 
 
-![image](Pictures/Figure_01.jpg)
+![image](images/Figure_01.jpg)
 Fig.1 System Diagram
 
 ## 2 Structure
@@ -23,17 +23,21 @@ This section will introduce the main structures within the system.
 
 ### (1) Motion Control Platform
 运动控制平台是一个三轴钻床的基础上改装的。
+![image](images/Figure_02.png)
 图2 运动平台（原始）
+
 定制了如下组件：
+![image](images/Figure_03.png)
 图3 改造示意图
+
 #### 1）安装板
 介绍：安装在Z轴滑板上的安装板，将注射器针筒和2D轮廓传感器安装在它上面。
 制造：3D打印（FDM），工程塑料。
-模型：链接
+模型：[click to get stl file](<3Dmodels/STL/安装板 - PlanB.STL>)
 #### 2）底座组件
 介绍：由基板、调节装置和底座构成。
 制造：底座材料为不锈钢，通过激光切割和折弯制造。其余部件可直接采购。
-模型：链接
+模型：[click to get stl file](<3Dmodels/STL/安装板 - PlanB.STL>)
 
 图4 运动平台（改造后）
 
