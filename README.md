@@ -12,7 +12,7 @@ When Printing, command are sent by PC via serial port to control board, and are 
 
 A set of programme are built to enable scanning function in matlab.
 
-When scanning, it is necessary to coordinate the motion and the sensor. The PC controls the motion platform to move a step through the serial port, and then communicates with the sensor through Ethernet to obtain the cross section. This cycle continues until the scan is completed.<img title="" src="file:///C:/Users/Martin/Documents/GitHub/Laser_Scanning/Pictures/Scan.jpg" alt="" data-align="center">
+When scanning, it is necessary to coordinate the motion and the sensor. The PC controls the motion platform to move a step through the serial port, and then communicates with the sensor through Ethernet to obtain the cross section. This cycle continues until the scan is completed.<img title="" src="file:/Pictures/Scan.jpg" alt="" data-align="center">
 
 ## 2 Structure
 
