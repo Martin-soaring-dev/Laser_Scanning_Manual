@@ -15,16 +15,17 @@ A set of programme are built to enable scanning function in matlab.
 When scanning, it is necessary to coordinate the motion and the sensor. The PC controls the motion platform to move a step through the serial port, and then communicates with the sensor through Ethernet to obtain the cross section. This cycle continues until the scan is completed. 
 
 ![image](Pictures/Figure_01.jpg)
+Fig.1 System Diagram
 
 ## 2 Structure
+
+This section will introduce the main structures within the system.
 
 ### (1) Motion Control Platform
 
 ### (2) Extrusion System
 
 ### (3) 2D profile sensor
-
-### (4) Ethernet Hub
 
 ## 3 Hardware
 
