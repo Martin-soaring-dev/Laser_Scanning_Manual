@@ -38,11 +38,15 @@ This section will introduce the main structures within the system.
 ### (1) 运动控制平台 Motion Control Platform
 运动控制平台是一个三轴钻床的基础上改装的。
 The motion control platform is modified based on a three-axis drilling machine.
+
 ![image](images/Figure_02.png)
+
 图2 运动平台（原始） Figure 2 Motion platform (original)
 
 定制了如下组件 The following components are customized:
+
 ![image](images/Figure_03.png)
+
 图3 改造示意图 Figure 3 Schematic diagram of transformation
 
 #### 1）安装板 Mounting Plate
@@ -97,10 +101,9 @@ Manufacturing: The base is made of stainless steel, manufactured by laser cuttin
 8.  外形尺寸：235×225×63mm
 9.  重量：2.8kg
 ##### 使用安装说明:
-位于背部的SETUP四位吐出时间编程器拨码开关，通过拨动其可作16种
-##### 出方式选择模式组合设定如下：
+位于背部的SETUP四位吐出时间编程器拨码开关，通过拨动其可作16种出方式选择模式组合设定如下：
 <table>
-<capital>模式开关状态</capital>
+<capital>模式组合</capital>
 <tr>
 <th rowspan=2 align="center">序号</th>
 <th colspan=4 align="center"> 模式开关状态</th>
