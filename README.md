@@ -29,6 +29,15 @@ When scanning, it is necessary to coordinate the motion and the sensor. The PC c
 ![image](images/Figure_01.jpg)
 图1 系统框图 Fig.1 System Diagram
 
+### 如何从0开始搭建整个系统呢？
+
+1. 购买/制造相应的组件，并按照设计进行装配
+2. 确定各个端子的对应情况，并完成接线
+3. 完成PC的环境准备、打印系统和扫描系统的配置
+   1. 电脑环境的准备
+   2. 打印和挤出系统的配置
+   3. 扫描系统的配置
+
 ## 2 结构 Structure
 
 本节将介绍系统内部的主要结构。
@@ -272,7 +281,7 @@ The sensor used is a KEYENCE 2D laser profile sensor, the driver model is LJ-G50
 
 Z向测量范围：侧头下方XXXX；X向测量范围：
 
-Z向测量精度：；X向测量精度。
+Z向测量精度：X向测量精度。
 
 #### 通讯方式：
 USB、串口、以太网。其中只有以太网通讯可以定制化传输轮廓数据。其他详情参见手册。
@@ -400,10 +409,14 @@ The official software of KEYENCE laser profile sensors can be used to test senso
 
 Used to draw print and scan tracks.
 
-## 6 Programme
+## 6 配置
+### 电脑环境的配置
+### 打印和挤出系统的配置
+### 扫描系统的配置
 
+## 7 程序和代码
 
-## 7 Example (How to use)
+## 8 Example (How to use)
 ### （1）打印一个立方体
 ### （2）获得一个截面轮廓
 ### （3）按照指定轨迹获取轮廓
