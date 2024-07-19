@@ -74,41 +74,213 @@ Manufacturing: The base is made of stainless steel, manufactured by laser cuttin
 模型 3D Model：[click to get stl file](<3Dmodels/STL/底座.STL>)
 
 ![alt text](images/96eef40f671b49c1fc0b6fbc2e41abf.jpg)
+
 图4 运动平台（改造后） Figure 4 Motion platform (after transformation)
+
+装配体 Assembly：[click to get stl file](<3Dmodels\STP\Assembly - Carriage-Z.STEP>)
 
 ### (2) Extrusion System
 挤出系统由气压分配器和挤出装置构成。气泵可根据实验室条件选购。
-#### 1）气压分配器
+#### 1）气压分配器 Pressure Dispenser
 ![alt text](images/cfa0d4b07e01fc85164b0fa47500455.jpg)
+
 图5 气压分配器
 
-介绍：找一下说明书。
-操作：
-    a. 调压：通过调节黑色旋钮调节气压
-    b. 开关：可以按下左侧红色小按钮进行手动调节，也可以外接踏板手动调节（这个接口被改造用于程序控制）；控制方式在手册中有详细说明。
-手册：链接
+##### 技术指标：
+1. 吐出方式：16种自由设定方式、带吐出时间显示*
+2. 自动定时吐出：00.01S-99.99S
+3. 吐出间隔时间：0.1-9.9S（自动定时功能）
+4. 输入电压：220V±10% 50Hz/110V±10% 60Hz
+5. 内部电压：12VDC/24VDC
+6. 输入气压：10-100pSi
+7. 输出气压：1-80 pSi
+8.  外形尺寸：235×225×63mm
+9.  重量：2.8kg
+##### 使用安装说明:
+位于背部的SETUP四位吐出时间编程器拨码开关，通过拨动其可作16种
+##### 出方式选择模式组合设定如下：
+<table>
+<capital>模式开关状态</capital>
+<tr>
+<th rowspan=2 align="center">序号</th>
+<th colspan=4 align="center"> 模式开关状态</th>
+<th rowspan=2 align="center">吐出方式及工作对应功能</th>
+</tr>
+<tr>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
+</tr>
+<tr>
+<th align="center">1</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  点动模式，按下/踩下并保持以维持挤出</th>
+</tr>
+<tr>
+<th align="center">2</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  保持模式，按下/踩下1次开关，按照设定的时间持续挤出；再按下/踩下1次开关停止挤出。</th>
+</tr>
+<tr>
+<th align="center">3</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  点动计时模式，按下/踩下并保持以维持挤出设定的时间</th>
+</tr>
+<tr>
+<th align="center">4</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  按照设定的时间自动定时连续挤出</th>
+</tr>
+<tr>
+<th align="center">5</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出1次。</th>
+</tr>
+<tr>
+<th align="center">6</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出2次。</th>
+</tr>
+<tr>
+<th align="center">7</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出3次。</th>
+</tr>
+<tr>
+<th align="center">8</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出4次。</th>
+</tr>
+<tr>
+<th align="center">9</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出5次。</th>
+</tr>
+<tr>
+<th align="center">10</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出6次。</th>
+</tr>
+<tr>
+<th align="center">11</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出7次。</th>
+</tr>
+<tr>
+<th align="center">12</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出8次。</th>
+</tr>
+<tr>
+<th align="center">13</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出9次。</th>
+</tr>
+<tr>
+<th align="center">14</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出10次。</th>
+</tr>
+<tr>
+<th align="center">15</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出11次。</th>
+</tr>
+<tr>
+<th align="center">16</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  按下/踩下1次开关，按设定时间挤出12次。</th>
+</tr>
+</table>
+
+##### 操作：
+1. 调压：通过调节黑色旋钮调节气压
+2. 开关：可以按下左侧红色小按钮进行手动调节，也可以外接踏板手动调节（这个接口被改造用于程序控制）；控制方式在手册中有详细说明。
+##### 参考资料
+1. [手册](Docs/JND-983A点胶机详细功能设置.docx)
+
+#### 2） 注射器针筒
+##### 三维模型
+1. 针筒
+2. 喷嘴
+3. 装配体
 
 ### (3) 2D激光轮廓传感器 2D laser profile sensor
+
 ![alt text](images/image-3.png)
+
 图6 激光轮廓传感器 Figure 6 Laser profile sensor
 
+#### 详情：
 使用的是基恩士2D激光轮廓传感器，驱动器型号为LJ-G5000，传感器型号为LJ-G030.
 
 The sensor used is a KEYENCE 2D laser profile sensor, the driver model is LJ-G5000, and the sensor model is LJ-G030.
 
-测量原理：
+#### 测量原理：
 
 Z向测量范围：侧头下方XXXX；X向测量范围：
 
 Z向测量精度：；X向测量精度。
 
-通讯方式：USB、串口、以太网。其中只有以太网通讯可以定制化传输轮廓数据。其他详情参见手册。
+#### 通讯方式：
+USB、串口、以太网。其中只有以太网通讯可以定制化传输轮廓数据。其他详情参见手册。
 
 Communication mode: USB, serial port, Ethernet. Only Ethernet communication can be customized to transmit profile data. For other details, please refer to the manual.
 
-手册：
-
-以太网通讯协议：
+#### 相关资料：
+1. [用户手册](<Docs/01 AS_79826_LJ-G_UM_96M13960_CN_1059-7.pdf>)
+2. [以太网通讯协议](<Docs/01 LJG5000_LAN.pdf>)
+3. [LJ-G015 3D模型](Docs/LJ-G015(K)_2.x_t)
+4. [LJ-G030 3D模型](Docs/LJ-G030_2.x_t)
 
 ## 3 硬件 Hardware
 
