@@ -50,7 +50,7 @@ The motion control platform is modified based on a three-axis drilling machine.
 
 Introduction: The mounting plate mounted on the Z-axis slide, the syringe barrel and 2D profile sensor are mounted on it.
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 制造：3D打印（FDM），工程塑料。
 
@@ -64,22 +64,22 @@ Manufacturing: 3D printing (FDM), engineered plastics.
 
 Introduction: It consists of a base plate, an adjustment device and a base.
 
-![alt text](image-2.png)
-![alt text](image-5.png)
+![alt text](images/image-2.png)
+![alt text](images/image-5.png)
 
 制造：底座材料为不锈钢，通过激光切割和折弯制造。其余部件可直接采购。
 
 Manufacturing: The base is made of stainless steel, manufactured by laser cutting and bending. The remaining parts can be purchased directly.
 
-模型 3D Model：[click to get stl file](<3Dmodels/STL/安装板 - PlanB.STL>)
+模型 3D Model：[click to get stl file](<3Dmodels/STL/底座.STL>)
 
-![alt text](96eef40f671b49c1fc0b6fbc2e41abf.jpg)
+![alt text](images/96eef40f671b49c1fc0b6fbc2e41abf.jpg)
 图4 运动平台（改造后） Figure 4 Motion platform (after transformation)
 
 ### (2) Extrusion System
 挤出系统由气压分配器和挤出装置构成。气泵可根据实验室条件选购。
 #### 1）气压分配器
-![alt text](cfa0d4b07e01fc85164b0fa47500455.jpg)
+![alt text](images/cfa0d4b07e01fc85164b0fa47500455.jpg)
 图5 气压分配器
 
 介绍：找一下说明书。
@@ -89,7 +89,7 @@ Manufacturing: The base is made of stainless steel, manufactured by laser cuttin
 手册：链接
 
 ### (3) 2D激光轮廓传感器 2D laser profile sensor
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 图6 激光轮廓传感器 Figure 6 Laser profile sensor
 
 使用的是基恩士2D激光轮廓传感器，驱动器型号为LJ-G5000，传感器型号为LJ-G030.
@@ -117,8 +117,8 @@ Communication mode: USB, serial port, Ethernet. Only Ethernet communication can 
 This section mainly introduces the wiring and related circuits.
 
 ### (1) 控制板 Control borard
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](images/image-6.png)
+![alt text](images/image-7.png)
 图7 控制板接口图 Figure 7 Control panel interface diagram
 
 使用的控制板品牌为：，型号为：。
@@ -127,7 +127,7 @@ This section mainly introduces the wiring and related circuits.
 支持的固件包括：。
 
 ### (2) 传感器驱动器 Sensor Driver
-![alt text](af2d056b9da10000c500996b1526ec5.jpg)
+![alt text](images/af2d056b9da10000c500996b1526ec5.jpg)
 图8 激光轮廓传感器驱动器 Figure 8 Laser profile sensor driver
 
 接线方式参见上图 See the figure above for wiring method：
@@ -141,7 +141,7 @@ This section mainly introduces the wiring and related circuits.
 ④传感器连接线。Sensor connection cable.
 
 ### (3) 电源 Power
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 图9 直流电源 Figure 9 DC power supply
 
 24V XXW直流电源
