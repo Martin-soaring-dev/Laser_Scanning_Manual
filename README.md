@@ -1,6 +1,6 @@
 # Extrusion 3D printer with integrated laser profile sensor - in NUS
 
-## 1 简介 Introduction
+## 1 简介（Introduction）
 
 2D激光轮廓传感器(2D Laser profile sensor)集成到3D打印机中以实现3D扫描，如下所示。
 
@@ -26,11 +26,11 @@
    2. 打印和挤出系统的配置
    3. 扫描系统的配置
 
-## 2 结构 Structure
+## 2 结构（Structure）
 
 本节将介绍系统内部的主要结构。
 
-### (1) 运动控制平台 Motion Control Platform
+### (1) 运动控制平台（Motion Control Platform）
 运动控制平台是一个三轴钻床的基础上改装的。
 
 ![image](images/Figure_02.png)
@@ -43,7 +43,7 @@
 
 图3 改造示意图 
 
-#### 1）安装板 Mounting Plate
+#### 1）安装板
 介绍：安装在Z轴滑板上的安装板，将注射器针筒和2D轮廓传感器安装在它上面。
 
 ![alt text](images/image.png)
@@ -52,7 +52,7 @@
 
 模型 3D Model：[click to get stl file](<3Dmodels/STL/安装板 - PlanB.STL>)
 
-#### 2）底座组件 Base assembly
+#### 2）底座组件
 
 介绍：由基板、调节装置和底座构成。
 
@@ -69,9 +69,9 @@
 
 装配体 Assembly：[click to get stl file](<3Dmodels\STP\Assembly - Carriage-Z.STEP>)
 
-### (2) 挤出系统 Extrusion System
+### (2) 挤出系统（Extrusion System）
 挤出系统由气压分配器和挤出装置构成。气泵可根据实验室条件选购。
-#### 1）气压分配器 Pressure Dispenser
+#### 1）气压分配器（Pressure Dispenser）
 ![alt text](images/cfa0d4b07e01fc85164b0fa47500455.jpg)
 
 图5 气压分配器
@@ -241,35 +241,54 @@
 
 #### 2） 注射器针筒
 ##### 三维模型
-1. 针筒
+1. [针筒](3Dmodels/SLDPRT/syringe.zip)
 2. [喷嘴](3Dmodels/SLDPRT/tips.rar)
 ##### 手册
 1. [喷嘴型号](Docs/技术表格.pdf)
 
-### (3) 2D激光轮廓传感器 2D laser profile sensor
+### (3) 2D激光轮廓传感器（2D laser profile sensor）
 
 ![alt text](images/image-3.png)
 
-图6 激光轮廓传感器 Figure 6 Laser profile sensor
+图6 激光轮廓传感器
 
-#### 详情：
-使用的是基恩士2D激光轮廓传感器，驱动器型号为LJ-G5000，传感器型号为LJ-G030.
+#### a. 概况：
+使用的是基恩士2D激光轮廓传感器，驱动器型号为LJ-G5001，传感器型号为LJ-G030.
 
-The sensor used is a KEYENCE 2D laser profile sensor, the driver model is LJ-G5000, and the sensor model is LJ-G030.
+##### i. 驱动器：
+驱动器基本安装尺寸如下所示：
 
-#### 测量原理：
+![alt text](<image-5 (2).png>)
 
-![alt text](image-2.png)
+##### ii. 传感器：
+1. 安装尺寸：
 
+![alt text](<屏幕截图 2024-07-26 221343.png>)
 
-Z向测量范围：侧头下方XXXX；X向测量范围：
+2. 测量原理及测量范围
+激光轮廓传感器采用激光三角反射式原理：激光束被放大形成一条激光线投射到被测物体表面上，反射光透过高质量光学系统，被投射到成像矩阵上，经过计算得到传感器到被测表面的距离（Z 轴）和沿着激光线的位置信息（X 轴）。移动被测物体或轮廓仪探头，就可以得到一组三维测量值。
 
-Z向测量精度：X向测量精度。
+![alt text](<屏幕截图 2024-07-26 221117.png>)
 
-#### 通讯方式：
+对于LJ-G030侧头，其有效测量区域为一个梯形，如下图所示：
+
+![alt text](<image-2 (2).png>)
+
+Z向测量范围：侧头下方30mm ± 10 mm；X向测量范围为 ±11 mm。
+
+3. 测量精度：
+Z向测量精度：1 μm. X向测量精度：5 μm。
+
+![alt text](<屏幕截图 2024-07-26 221755.png>)
+
+#### b. 通讯方式：
+
 USB、串口、以太网。其中只有以太网通讯可以定制化传输轮廓数据。其他详情参见手册。
+这里展示部分内容：
 
-Communication mode: USB, serial port, Ethernet. Only Ethernet communication can be customized to transmit profile data. For other details, please refer to the manual.
+![alt text](<image-7 (2).png>)
+
+![alt text](image-9.png)
 
 #### 相关资料：
 1. [用户手册](<Docs/01 AS_79826_LJ-G_UM_96M13960_CN_1059-7.pdf>)
