@@ -242,18 +242,13 @@
 #### 2） 注射器针筒
 ##### 三维模型
 1. 针筒
-2. 喷嘴
-3. 装配体
+2. [喷嘴](3Dmodels/SLDPRT/tips.rar)
+##### 手册
+1. [喷嘴型号](Docs/技术表格.pdf)
 
 ### (3) 2D激光轮廓传感器 2D laser profile sensor
 
 ![alt text](images/image-3.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
-![alt text](image-10.png)
 
 图6 激光轮廓传感器 Figure 6 Laser profile sensor
 
