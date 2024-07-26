@@ -1,6 +1,6 @@
 # Extrusion 3D printer with integrated laser profile sensor - in NUS
 
-## 1 简介（Introduction）
+## 一、简介（Introduction）
 
 2D激光轮廓传感器(2D Laser profile sensor)集成到3D打印机中以实现3D扫描，如下所示。
 
@@ -26,7 +26,7 @@
    2. 打印和挤出系统的配置
    3. 扫描系统的配置
 
-## 2 结构（Structure）
+## 二、结构（Structure）
 
 本节将介绍系统内部的主要结构。
 
@@ -296,7 +296,7 @@ USB、串口、以太网。其中只有以太网通讯可以定制化传输轮�
 3. [LJ-G015 3D模型](Docs/LJ-G015(K)_2.x_t)
 4. [LJ-G030 3D模型](Docs/LJ-G030_2.x_t)
 
-## 3 硬件（Hardware）
+## 三、硬件（Hardware）
 
 这一节主要介绍接线和相关电路。
 
@@ -405,7 +405,7 @@ USB、串口、以太网。其中只有以太网通讯可以定制化传输轮�
 
 ④传感器连接线。
 
-## 4 Firmware - Marlin
+## 四、Firmware - Marlin
 [Marlin](https://marlinfw.org/)是最常用的开源3D打印固件，我们对其进行了相应修改，以满足设备使用：
 
 1. 启用G05样条插补
@@ -422,7 +422,7 @@ Marlin官网：https://marlinfw.org/
 
 定制Marlin资源：https://lecloud.lenovo.com/share/2JQMt9CWcRS9uVE4x （密码：pgjg）
 
-## 5 软件 Software
+## 五、软件 Software
 这里分享使用的相关软件：
 
 ### （1）切片软件 Slicing software
@@ -466,14 +466,29 @@ Slic3r是款开源切片软件，但是其已经停止开发了，所以存在�
 ### （4）CAXA 电子图版 2018 （中文版）
 用于绘制打印、扫描轨迹
 
-## 6 配置
-### 电脑环境的配置
-### 打印和挤出系统的配置
-### 扫描系统的配置
+## 六、配置
+### 1. 电脑环境的配置
+系统：Windows 7/8/10/11都可以
+软件：PrusaSlicer、pronterface、LJ-Navigator、CAXA、MATLAB。
+### 2. 打印和挤出系统的配置
+（1）连接：
+   将PC和控制板连接起来
+（2）确认端口号：
+   此电脑[右击]→管理[打开“计算机管理”]→点击设备管理器→查看端口（找到连接控制板后新出现的端口，记住它）
 
-## 7 程序和代码
+![alt text](images/QQ_1722011347970.png)
 
-## 8 Example (How to use)
+（3）通讯：
+   打开"pronterface"然后选择刚才的端口号，配置波特率（默认250000）→连接
+   然后就可以开始进行控制了，可以测试一下XYZ方向的移动，以及回零（测试限位开关），以及气压开关控制（手动输入M106/M107或如图配置两个按钮）。
+   
+![alt text](images/QQ_1722011575548.png)
+
+### 3. 扫描系统的配置
+
+## 七、程序和代码
+
+## 八、Example (How to use)
 ### （1）打印一个立方体
 ### （2）获得一个截面轮廓
 ### （3）按照指定轨迹获取轮廓
