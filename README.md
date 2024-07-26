@@ -296,23 +296,88 @@ USB、串口、以太网。其中只有以太网通讯可以定制化传输轮�
 3. [LJ-G015 3D模型](Docs/LJ-G015(K)_2.x_t)
 4. [LJ-G030 3D模型](Docs/LJ-G030_2.x_t)
 
-## 3 硬件 Hardware
+## 3 硬件（Hardware）
 
 这一节主要介绍接线和相关电路。
 
-This section mainly introduces the wiring and related circuits.
-
 ### (1) 控制板 Control borard
+控制板采用了[创客基地(MakerBase)](https://makerbase.com.cn/)的[MKS-Monster8](https://github.com/makerbase-mks/MKS-Monster8)控制板。该控制板支持Marlin、Klipper等主流3D打印固件。
+
+![alt text](控制板基本介绍.jpg)
+
+基本技术参数如下：
+- MCU: STM32F407VET6, 168MHz, 512K flash, 192KB RAM
+- 供电：DC12-24V input(2 MP1584EN Output DC12V(For FANs) and DC5V)
+- 3 PWM FANs + 3 power output(all power can be select by jumper and select VIN, dc12V, dc5V)
+- axis drivers and 9 motor interface(Driver0,1,2-1,2-2,3,4,5,6,7)
+- EXP1,EXP2 support MKS MINI12864,MKS TS35,LCD12864,LCD2004
+- USART(usart1:PA9,PA10) support MKS H43 or for other serial communication
+- 6 endstop support power select(X-,X+,Y-,Y+,Z-,Z+) and 3D TOUCH(PA8) interface
+- 4K eeprom on board(connect to I2C)
+- Built-in CAN transceiver and interface(connect to CAN)
+- Integrated SPI communication microsd card and reserved SPI signal interface
+- Integrated UDISK
+- Integrated virtural USB device
+- Support TMC UART and SPI mode, SENSORLESS_HOMING function(Diag0-5,connect to X-,Y-,Z-,X+,Y+,Z+)
+- Support driver power select(5V or 3.3V)
+- Has TVS power spike protection
+- Possess power reverse connection protection function
+- Support DFU mode set by button(Boot0)
+
 ![alt text](images/image-6.png)
 ![alt text](images/image-7.png)
-图7 控制板接口图 Figure 7 Control panel interface diagram
 
-使用的控制板品牌为：，型号为：。
-控制板相关信息的网页：。
-芯片为：。
-支持的固件包括：。
+但是，我们的平台需要使用的为X、Y、Z三轴的控制、无挤出加热需求、预留基板(substrate)的加热板(hot bed)，将风扇控制口留作气压开关(switch)控制，限位开关。综合上述考虑，大体的接线方案如下：
 
-### (2) 传感器驱动器 Sensor Driver
+![alt text](接线-控制板.jpg)
+
+接下来我将结合这个整体接线图来说明各个部分是如何连接到控制板上的。
+
+### (2) 电源 
+电源用的就是很常见的220V交流输入，24V直流输出的电源。
+
+![alt text](images/image-8.png)
+
+图9 直流电源 Figure 9 DC power supply
+
+### (3) 步进电机 Step Motors
+所使用的点击为57步进电机。
+步进电机首先与驱动器相连，驱动器需要接电源，并与控制板相连。
+
+其控制方式为位置控制模式，即每发送一个脉冲，步进电机根据驱动器的设定转动特定的角度。对于57步进电机来说，步距角θ为0.8°（即1个脉冲对应电机轴转动0.8°），驱动可以设置系分数n，从而使得步距角变为θ/n，从而提高运动精度。只不过这种提升也是有限度的，通常认为细分数大于32时，对精度提升的效果会变得有限，细分数高于32时，主要的贡献在于提高运动的平稳性。
+
+#### 驱动器
+所使用的驱动器没有看到品牌和型号，但是将其设置面板抄了下来：
+
+![alt text](接线-不进驱动.jpg)
+
+可以通过调整驱动器的拨码开关来调整电流峰值和细分数。突出显示的是原有配置，我沿用了该配置。
+
+
+
+其接线方式如下：
+
+图9 步进电机接线图 Figure 9 Stepper motor wiring diagram
+
+### (4) 限位开关 Endstops
+光电传感器，型号
+手册：
+
+图10 限位开关接线图 Figure 10 Limit switch wiring diagram
+
+### (5) Hotbed
+热床尺寸为
+
+图11 热床接线图 Figure 11 Hot bed wiring diagram
+
+### (6) Pressure switch control
+气压开关控制由电磁继电器实现，其接线图如下：
+
+The air pressure switch control is realized by an electromagnetic relay, and its wiring diagram is as follows:
+
+图12 气压开关控制接线图 Figure 12 Air pressure switch control wiring diagram
+
+### (7) 传感器驱动器 Sensor Driver
 ![alt text](images/af2d056b9da10000c500996b1526ec5.jpg)
 ![alt text](image.png)
 ![alt text](image-3.png)
@@ -334,35 +399,6 @@ This section mainly introduces the wiring and related circuits.
 
 ④传感器连接线。Sensor connection cable.
 
-### (3) 电源 Power
-![alt text](images/image-8.png)
-图9 直流电源 Figure 9 DC power supply
-
-24V XXW直流电源
-
-### (4) 步进电机 Step Motors
-57步进电机 57 Stepper Motor
-其接线方式如下：
-
-图9 步进电机接线图 Figure 9 Stepper motor wiring diagram
-
-### (5) 限位开关 Endstops
-光电传感器，型号
-手册：
-
-图10 限位开关接线图 Figure 10 Limit switch wiring diagram
-
-### (6) Hotbed
-热床尺寸为
-
-图11 热床接线图 Figure 11 Hot bed wiring diagram
-
-### (4) Pressure switch control
-气压开关控制由电磁继电器实现，其接线图如下：
-
-The air pressure switch control is realized by an electromagnetic relay, and its wiring diagram is as follows:
-
-图12 气压开关控制接线图 Figure 12 Air pressure switch control wiring diagram
 
 ## 4 Firmware - Marlin
 Marlin是最常用的开源3D打印固件，我们对其进行了相应修改，以满足设备使用：
