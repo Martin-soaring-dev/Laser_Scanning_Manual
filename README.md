@@ -331,6 +331,12 @@ USB、串口、以太网。其中只有以太网通讯可以定制化传输轮�
 
 ![alt text](images/接线-控制板.jpg)
 
+接线图
+
+![alt text](images/接线-控制板1.jpg)
+
+接线图-补充
+
 接下来我将结合这个整体接线图来说明各个部分是如何连接到控制板上的。
 
 ### (2) 电源 
@@ -360,92 +366,90 @@ USB、串口、以太网。其中只有以太网通讯可以定制化传输轮�
 
 原先的接线方式如下：
 
+![alt text](images/原有线序-步进电机.jpg)
 
+参照原有接线方式进行接线。需要指出的是，使用了一个转接板直插到控制板上，然后再进行接线，公共端（COM）接地，其他的包括使能（Enable）、脉冲（Pulus）、方向（Direction）。并且线缆颜色与下图一一对应：
 
-其接线方式如下：
-
-图9 步进电机接线图 Figure 9 Stepper motor wiring diagram
+![alt text](images/接线-步进电机.jpg)
 
 ### (4) 限位开关 Endstops
-光电传感器，型号
-手册：
 
-图10 限位开关接线图 Figure 10 Limit switch wiring diagram
+光电传感器，型号未知。根据原有接线方案调整：
+
+![alt text](<images/原有线序-步进电机 - 副本.jpg>)
+
+在实际调试过程中，发现原有的vcc 5V无法满足使用需要，有时候会出现电压不足的问题，且传感器上标识的工作电压为0~24V，因此选用24V电压作为供电。
+
+可以在概览图中看到，在“接线图-补充”中，提到了Z+ endstop voltage selection, 在这里调整条线接法就能调整施加电压。
 
 ### (5) Hotbed
-热床尺寸为
+热床尺寸为210mm × 210mm
 
-图11 热床接线图 Figure 11 Hot bed wiring diagram
+参考“接线图”进行接线即可，另外热床上有一个100k热敏电阻，需要借到“接线图-补充”中的TB处。
 
 ### (6) Pressure switch control
-气压开关控制由电磁继电器实现，其接线图如下：
 
-The air pressure switch control is realized by an electromagnetic relay, and its wiring diagram is as follows:
-
-图12 气压开关控制接线图 Figure 12 Air pressure switch control wiring diagram
+气压开关控制通过Controllable Fan端口控制，电压调整为24V，并接到继电器模块上，另外一端接到气压分配器(pressure dispenser)上，进而进行气压的开关控制(switch control)。
 
 ### (7) 传感器驱动器 Sensor Driver
-![alt text](images/af2d056b9da10000c500996b1526ec5.jpg)
-![alt text](image.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](<2023年12月_202407231441_49116 16.jpg>) 
-![alt text](<2023年12月_202407231441_41358 10.jpg>) 
-![alt text](<2023年12月_202407231441_42590 11.jpg>) 
-![alt text](<2023年12月_202407231441_44063 12.jpg>)
 
-图8 激光轮廓传感器驱动器 Figure 8 Laser profile sensor driver
+![alt text](<images/image-3 (2).png>)
 
-接线方式参见上图 See the figure above for wiring method：
+驱动器的接线方式参见上图：
 
-①激光轮廓传感器需要接直流电源，电压为24V。The laser profile sensor needs to be connected to a DC power supply with a voltage of 24V.
+①激光轮廓传感器需要接直流电源，电压为24V。
 
-②可接显示器(VGA)观察轮廓信息。Can be connected to a monitor (VGA) to observe profile information.
+②可接显示器(VGA)观察轮廓信息。
 
-③以太网口连接到路由器上从而与PC连接。The Ethernet port is connected to the router and then connected to the PC.
+③以太网口连接到路由器上从而与PC连接。也预留USB、RS232可以连接PC。
 
-④传感器连接线。Sensor connection cable.
-
+④传感器连接线。
 
 ## 4 Firmware - Marlin
-Marlin是最常用的开源3D打印固件，我们对其进行了相应修改，以满足设备使用：
+[Marlin](https://marlinfw.org/)是最常用的开源3D打印固件，我们对其进行了相应修改，以满足设备使用：
 
-Marlin is the most commonly used open source 3D printing firmware, and we modified it accordingly to meet the needs of the device.
+1. 启用G05样条插补
+2. 启用XYZ3个轴，并设定脉冲当量（每个轴移动1mm对应的脉冲数）
+3. 关闭挤出机冷挤出限制（禁用温度传感器，设置最低挤出温度为0℃）
+4. 按照实际行程范围调整配置打印范围。
+5. 设置回零方向为X-，Y-，Z+
 
-XXXXXX
+编程环境：VScode环境下使用PlatformIO插件。
 
-Marlin官网：
-原始Marlin资源：
+Marlin官网：https://marlinfw.org/
+
+原始Marlin资源：https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4
+
 定制Marlin资源：
 
 ## 5 软件 Software
 这里分享使用的相关软件：
 
-Here are the related software used:
-
 ### （1）切片软件 Slicing software
 #### 1）Slic3r
 Slic3r是款开源切片软件，但是其已经停止开发了，所以存在一些bug。
 
-Slic3r is an open source slicing software, but it has stopped development, so there are some bugs.
+官网：https://slic3r.org/
 
-官网：
-
+![alt text](images/scli3r.png)
 
 图13 Slic3r界面
 
+#### 2）PrusaSlicer
 
-#### 2）sssss
+是Slic3r的一个分支，目前仍然在开发，并且其社区相对活跃。之前使用Slic3r，但是因为BUG太多，现在已经转为使用PrusaSlicer。
 
-是Slic3r的一个分支，目前仍然在开发，并且其社区相对活跃。
+官网：https://www.prusa3d.com/page/prusaslicer_424/
 
-It is a fork of Slic3r and is still under development with a relatively active community.
+![alt text](images/PrusaSlicer.png)
 
-图14 Slic3r界面
+图14 PrusaSlicer界面
 
-### （2）用户界面 user interface：Printerun
+### （2）用户界面 user interface：pronterface   
 
-官网：
+官网：https://www.pronterface.com/
+
+![alt text](images/pronterface.png)
 
 图15 界面
 
@@ -453,14 +457,14 @@ It is a fork of Slic3r and is still under development with a relatively active c
 
 基恩士激光轮廓传感器的官方软件，可以用来测试传感器和配置相关参数。
 
-The official software of KEYENCE laser profile sensors can be used to test sensors and configure related parameters.
+![alt text](images/ljnavigator.png)
 
 图16 界面
 
-### （4）CAXA 电子图版 2018 （中文版）
-用于绘制打印、扫描轨迹。
+安装包：[LJ-Navigator](Docs/基恩士软件.rar)
 
-Used to draw print and scan tracks.
+### （4）CAXA 电子图版 2018 （中文版）
+用于绘制打印、扫描轨迹
 
 ## 6 配置
 ### 电脑环境的配置
