@@ -420,7 +420,7 @@ Marlin官网：https://marlinfw.org/
 
 原始Marlin资源：https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4
 
-定制Marlin资源：https://lecloud.lenovo.com/share/2JQMt9CWcRS9uVE4x（密码：pgjg）
+定制Marlin资源：https://lecloud.lenovo.com/share/2JQMt9CWcRS9uVE4x （密码：pgjg）
 
 ## 5 软件 Software
 这里分享使用的相关软件：
