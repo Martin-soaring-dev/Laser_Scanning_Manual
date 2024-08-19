@@ -508,7 +508,7 @@ Slic3r是款开源切片软件，但是其已经停止开发了，所以存在�
 
 ​	**方法2**：[电脑]，使用USB连接后用LJ-Navigator进行设置。打开LJ-Navigator，选择合适的预设文件，然后选择好通讯方式（USB），接着接收设置。然后参考方法1进行IP地址的设置，完成后发送设置后重启即可。
 
-![image-20240819165403294](D:\Users\Martin\Documents\Markdown\Laser_Scanning\images\image-20240819165403294.png)
+![image-20240819165403294](<images\image-20240819165403294.png>)
 
 （4）软件设置：[电脑]，打开LJ-Navigator进行通讯设定。
 
@@ -516,7 +516,7 @@ Slic3r是款开源切片软件，但是其已经停止开发了，所以存在�
 - 通讯设定→PC通讯设定：选择通过以太网通讯，然后选择链接控制器，再点击检查控制器，稍等，然后点击下拉菜单，从而刷新局域网内的设备，若出现了刚才设定的IP则说明设定成功（传感器已经成功连入局域网）
 - 点击Receive settings from controller，读取驱动器设定，从而测试连接。
 
-![image-20240819165446998](D:\Users\Martin\Documents\Markdown\Laser_Scanning\images\image-20240819165446998.png)
+![image-20240819165446998](<images\image-20240819165446998.png>)
 
 ### 3.2 截面获取
 
@@ -525,7 +525,7 @@ Slic3r是款开源切片软件，但是其已经停止开发了，所以存在�
 1. 点击View profile，点击开始预览，从而获取显示扫描图像
 2. 点击CSV output，输出800个z坐标信息（单位为mm，但会有错误点，错误点用-999.999表示，需剔除错误点）
 
-![image-20240819165701802](D:\Users\Martin\Documents\Markdown\Laser_Scanning\images\image-20240819165701802.png)
+![image-20240819165701802](<images\image-20240819165701802.png>)
 
 #### 方法2：MATLAB代码处理数据信息（相关代码在下一节介绍）
 
@@ -564,7 +564,7 @@ Slic3r是款开源切片软件，但是其已经停止开发了，所以存在�
 plot(coordinate,profile) % 绘制截面形状
 ```
 
-![image-20240819165756471](D:\Users\Martin\Documents\Markdown\Laser_Scanning\images\image-20240819165756471.png)
+![image-20240819165756471](<images\image-20240819165756471.png>)
 
 ### 3.3 使用技巧
 
@@ -582,7 +582,7 @@ Matlab App Installation Package: [LJ_G5000_v1_2.mlappinstall](<Docs\LJ_G5000_v1_
 
 **（1）安装**：双击安装包即可，安装后可以在附加管理器中找到文件目录：
 
-![image-20240819173222894](D:\Users\Martin\Documents\Markdown\Laser_Scanning\images\image-20240819173222894.png)
+![image-20240819173222894](<images\image-20240819173222894.png>)
 
 **（2）使用**：
 
