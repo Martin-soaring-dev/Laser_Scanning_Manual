@@ -578,7 +578,7 @@ plot(coordinate,profile) % 绘制截面形状
 
 ### 1. 截面获取
 
-Matlab App Installation Package: [LJ_G5000_v1_2.mlappinstall](<Docs\LJ_G5000_v1_2.mlappinstall>) 
+Matlab App Installation Package: [LJ_G5000_v1_2.mlappinstall](<Docs/LJ_G5000_v1_2.mlappinstall>) 
 
 **（1）安装**：双击安装包即可，安装后可以在附加管理器中找到文件目录：
 
